@@ -21,30 +21,8 @@ public class Hangman extends ConsoleProgram {
     	
     	
     	// in first case, we need to take word from list
-    	int randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	println(randNumber);
-    	randNumber = randNum.nextInt(0, 10);
-    	
-    	
+    	int randNumber = randNum.nextInt(0, 9);
+    	HangmanLexicon.getWord(7);
 		
     	while(gameOn){
     		println("The word now looks like this: ");
