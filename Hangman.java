@@ -23,16 +23,26 @@ public class Hangman extends ConsoleProgram {
     	// in first case, we need to take word from list
     	int randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	println(randNumber);
+    	randNumber = randNum.nextInt(0, 10);
     	
     	
 		
