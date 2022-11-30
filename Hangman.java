@@ -12,9 +12,34 @@ import acm.util.*;
 import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
+	
+	private RandomGenerator randNum = RandomGenerator.getInstance();
+	
+	boolean gameOn = false;
 
     public void run() {
-		/* You fill this in */
+    	
+    	
+    	// in first case, we need to take word from list
+    	int randNumber = randNum.nextInt(0, 10);
+    	println(randNumber);
+    	println(randNumber);
+    	println(randNumber);
+    	println(randNumber);
+    	println(randNumber);
+    	
+    	println(randNumber);
+    	println(randNumber);
+    	println(randNumber);
+    	println(randNumber);
+    	println(randNumber);
+    	
+    	
+		
+    	while(gameOn){
+    		println("The word now looks like this: ");
+    		
+    	}
 	}
 
 }
