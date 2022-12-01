@@ -14,6 +14,7 @@ import java.awt.*;
 public class Hangman extends ConsoleProgram {
 	
 	private RandomGenerator randNum = RandomGenerator.getInstance();
+	private HangmanLexicon word = new HangmanLexicon();
 	
 	boolean gameOn = false;
 
@@ -22,7 +23,7 @@ public class Hangman extends ConsoleProgram {
     	
     	// in first case, we need to take word from list
     	int randNumber = randNum.nextInt(0, 9);
-    	HangmanLexicon.getWord(7);
+    	word.getWord(7);
 		
     	while(gameOn){
     		println("The word now looks like this: ");
