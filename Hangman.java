@@ -17,7 +17,9 @@ public class Hangman extends ConsoleProgram {
 	private HangmanLexicon word = new HangmanLexicon();
 	
 	boolean gameOn = false;
-
+	
+	
+	
     public void run() {
     	
     	
@@ -25,10 +27,14 @@ public class Hangman extends ConsoleProgram {
     	int randNumber = randNum.nextInt(0, 9);
     	String gameWord = word.getWord(randNumber);
     	
-    	changeWordWithDesh(gameWord);
+    	changeWordWithDesh(gameWord); // returning desh word with length of word;
     	
 		
     	while(gameOn){
+    		
+    		usersChar();
+    		
+    		
     		println("The word now looks like this: ");
     		
     	}
@@ -36,20 +42,25 @@ public class Hangman extends ConsoleProgram {
     
     
     
-    private void changeWordWithDesh(String gameWord){
+    private void usersChar() {
+		String userChar = readString("Your guess: ");
+		int user = readInt("!");
+		
+	}
+
+
+
+	private String changeWordWithDesh(String gameWord){
     	int wordLength = gameWord.length();
-    	
     	
     	String deshWord = "";
     	
     	for(int i = 0; i < wordLength; i++){
     		
-    		
     		deshWord = deshWord +  "-";
-    		println(deshWord);
     	}
     	
-    	
+    	return deshWord;
     	
     	
     }
