@@ -34,17 +34,19 @@ public class Hangman extends ConsoleProgram {
     	}
 	}
     
-    String deshWord; 
+    
     
     private void changeWordWithDesh(String gameWord){
     	int wordLength = gameWord.length();
     	
     	for(int i = 0; i < wordLength; i++){
+    		String deshWord;
     		deshWord = "";
     		deshWord += "-";
+    		println(deshWord);
     	}
     	
-    	println(deshWord);
+    	
     	
     	
     }
