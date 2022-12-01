@@ -23,7 +23,8 @@ public class Hangman extends ConsoleProgram {
     	
     	// in first case, we need to take word from list
     	int randNumber = randNum.nextInt(0, 9);
-    	word.getWord(7);
+    	String gameWord = word.getWord(7);
+    	println(gameWord);
 		
     	while(gameOn){
     		println("The word now looks like this: ");
