@@ -23,13 +23,30 @@ public class Hangman extends ConsoleProgram {
     	
     	// in first case, we need to take word from list
     	int randNumber = randNum.nextInt(0, 9);
-    	String gameWord = word.getWord(7);
-    	println(gameWord);
+    	String gameWord = word.getWord(randNumber);
+    	
+    	changeWordWithDesh(gameWord);
+    	
 		
     	while(gameOn){
     		println("The word now looks like this: ");
     		
     	}
 	}
+    
+    String deshWord; 
+    
+    private void changeWordWithDesh(String gameWord){
+    	int wordLength = gameWord.length();
+    	
+    	for(int i = 0; i < wordLength; i++){
+    		deshWord = "";
+    		deshWord += "-";
+    	}
+    	
+    	println(deshWord);
+    	
+    	
+    }
 
 }
