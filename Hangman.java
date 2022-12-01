@@ -44,7 +44,7 @@ public class Hangman extends ConsoleProgram {
     
     private void usersChar() {
 		String userChar = readString("Your guess: ");
-		int user = readInt("!");
+		
 		
 	}
 
