@@ -28,7 +28,7 @@ public class Hangman extends ConsoleProgram {
     	String gameWord = word.getWord(randNumber);
     	
     	String deshWord = changeWordWithDesh(gameWord); // returning desh word with length of word;
-    	println(deshWord);
+  
 		
     	while(gameOn){
     		
@@ -45,7 +45,8 @@ public class Hangman extends ConsoleProgram {
     
     
     private void usersChar() {
-		String userChar = readLine("Your guess: ");
+		String userStringChar = readLine("Your guess: ");
+		char userChar = userStringChar.charAt(0);
 		println(userChar);
 		
 		
