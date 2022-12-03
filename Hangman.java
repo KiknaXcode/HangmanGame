@@ -35,7 +35,7 @@ public class Hangman extends ConsoleProgram {
 		
     	while(gameOn){
     		
-    		int couneter = 0;
+    		int counter = 0;
     		
     		char userChar = usersChar(); // converting string to char and returns it
     		
@@ -44,7 +44,11 @@ public class Hangman extends ConsoleProgram {
     		
     		println("The word now looks like this: ");
     		
-    		break;
+    		counter++;
+    		
+    		if(counter == 10){
+    			break;
+    		}
     		
     	}
 	}
