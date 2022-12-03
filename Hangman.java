@@ -76,11 +76,37 @@ public class Hangman extends ConsoleProgram {
 	private void checkWord(char userChar){
 		for(int i = 0; i < gameWord.length(); i++){
 			if(gameWord.charAt(i) == userChar){
+				int indexOfChar = gameWord.indexOf(userChar);
+				
+				String chagnedDeshWord = changeDeshWord(indexOfChar, userChar); // returning changed version of deshWord
+				
+				println(chagnedDeshWord);
+				
 				
 			}else{
 				println("no no");
 			}
 		}
+	}
+	
+	private String changeDeshWord(int indexOfChar, char userChar){
+    	int wordLength = gameWord.length();
+    	
+    	String newDeshWord = "";
+    	
+    	for(int i = 0; i < wordLength; i++){
+    		
+    		if(i == indexOfChar){
+    			newDeshWord = newDeshWord +  userChar;
+    		}else{
+    			newDeshWord = newDeshWord +  "-";
+    		}
+    		
+    	}
+    	
+    	return newDeshWord;
+   
+		
 	}
 
 }
