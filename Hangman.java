@@ -35,9 +35,11 @@ public class Hangman extends ConsoleProgram {
 		
     	while(gameOn){
     		
+    		int couneter = 0;
+    		
     		char userChar = usersChar(); // converting string to char and returns it
     		
-    		checkWord(userChar);
+    		giveMeNewDesh(userChar);
     		
     		
     		println("The word now looks like this: ");
@@ -73,21 +75,28 @@ public class Hangman extends ConsoleProgram {
     	
     }
 	
-	private void checkWord(char userChar){
+	private String giveMeNewDesh(char userChar){
 		for(int i = 0; i < gameWord.length(); i++){
 			if(gameWord.charAt(i) == userChar){
 				int indexOfChar = gameWord.indexOf(userChar);
 				
-				String chagnedDeshWord = changeDeshWord(indexOfChar, userChar); // returning changed version of deshWord
+				String changedDeshWord = changeDeshWord(indexOfChar, userChar); // returning changed version of deshWord
 				
-				println(chagnedDeshWord);
+				println(changedDeshWord);  
+				
+				return changedDeshWord;
 				
 				
 			}else{
-				println("no no");
+				
+				String noNo = "no no"
+				
+				return noNo;
 			}
 		}
-	}
+		
+		
+	}	
 	
 	private String changeDeshWord(int indexOfChar, char userChar){
     	int wordLength = gameWord.length();
