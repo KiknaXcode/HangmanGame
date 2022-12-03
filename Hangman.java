@@ -18,6 +18,8 @@ public class Hangman extends ConsoleProgram {
 	
 	boolean gameOn = true;
 	
+	String gameWord;
+	
 	
 	
     public void run() {
@@ -25,14 +27,17 @@ public class Hangman extends ConsoleProgram {
     	
     	// in first case, we need to take word from list
     	int randNumber = randNum.nextInt(0, 9);
-    	String gameWord = word.getWord(randNumber);
+    	
+    	gameWord = word.getWord(randNumber);
     	
     	String deshWord = changeWordWithDesh(gameWord); // returning desh word with length of word;
   
 		
     	while(gameOn){
     		
-    		usersChar();
+    		char userChar = usersChar(); // converting string to char and returns it
+    		
+    		checkWord(userChar);
     		
     		
     		println("The word now looks like this: ");
@@ -44,12 +49,12 @@ public class Hangman extends ConsoleProgram {
     
     
     
-    private void usersChar() {
+    private char usersChar() {
 		String userStringChar = readLine("Your guess: ");
+		
 		char userChar = userStringChar.charAt(0);
-		println(userChar);
 		
-		
+		return userChar;
 	}
 
 
@@ -66,7 +71,12 @@ public class Hangman extends ConsoleProgram {
     	
     	return deshWord;
     	
-    	
     }
+	
+	private void checkWord(char userChar){
+		for(int i = 0; i < gameWord.length(); i++){
+			println("hello" + userChar);
+		}
+	}
 
 }
