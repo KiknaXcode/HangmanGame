@@ -37,13 +37,16 @@ public class Hangman extends ConsoleProgram {
     		
     		println("The word now looks like this: ");
     		
+    		break;
+    		
     	}
 	}
     
     
     
     private void usersChar() {
-		String userChar = readString("Your guess: ");
+		String userChar = readLine("Your guess: ");
+		println(userChar);
 		
 		
 	}
