@@ -16,7 +16,7 @@ public class Hangman extends ConsoleProgram {
 	private RandomGenerator randNum = RandomGenerator.getInstance();
 	private HangmanLexicon word = new HangmanLexicon();
 	
-	boolean gameOn = false;
+	boolean gameOn = true;
 	
 	
 	
