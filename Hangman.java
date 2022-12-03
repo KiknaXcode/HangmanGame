@@ -75,7 +75,11 @@ public class Hangman extends ConsoleProgram {
 	
 	private void checkWord(char userChar){
 		for(int i = 0; i < gameWord.length(); i++){
-			println("hello" + userChar);
+			if(gameWord.charAt(i) == userChar){
+				println("hello")
+			}else{
+				println("no no")
+			}
 		}
 	}
 
