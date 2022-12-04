@@ -83,7 +83,7 @@ public class Hangman extends ConsoleProgram {
     		
     		incorrectChar = checkCharType(userChar);
     		
-    		printingSystem(inccorrectChar);
+    		printingSystem(incorrectChar);
     		
     	}
     	
