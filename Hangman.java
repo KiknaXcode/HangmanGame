@@ -47,7 +47,7 @@ public class Hangman extends ConsoleProgram {
     		counter++;
     		
     		if(counter == 20){
-    			break;
+    			gameOn = false;
     		}
     		
     	}
