@@ -85,9 +85,11 @@ public class Hangman extends ConsoleProgram {
 	
 	private String giveMeNewDesh(char userChar){
 		
-		String newDeshWord = "";
+		String newDeshWord;
 		
 		for(int i = 0; i < gameWord.length(); i++){
+			
+			newDeshWord = "";
 			
 			if(gameWord.charAt(i) == userChar){
 				
