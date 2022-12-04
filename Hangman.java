@@ -20,15 +20,25 @@ public class Hangman extends ConsoleProgram {
 	
 	String gameWord;
 	
+	int livesPerTry = 8;
+	
 	
 	
     public void run() {
+    	
+    	println("Welcome to Hangman");
     	
     	
     	// in first case, we need to take word from list
     	int randNumber = randNum.nextInt(0, 1);
     	
     	gameWord = word.getWord(randNumber); // getting random word according to randNumber value;
+    	
+    	println(gameStartWord());
+    	
+    	println("You have " + livesPerTry + "guessess left.");
+    	
+    	
   
 		
     	while(gameOn){
@@ -107,14 +117,28 @@ public class Hangman extends ConsoleProgram {
 		
 	}	
 	
-	private boolean checkCharType(char userChar){
+	private boolean checkCharType(char userChar){  // checks if charachter is letter or not
 		if(Character.isLetter(userChar)){
 			return false;
 		}else{
+			livesPerTry--;
+			println("You have " + livesPerTry + "guessess left.");
 			return true;
 		}
 		
 	}
+	
+	
+	private String gameStartWord(){
+		String deshWord = "";
+		
+		for(int i = 0; i < gameWord.length(); i++){		
+				deshWord = deshWord +  "-";	
+		}
+		return deshWord;
+	}
+		
+		
 
 
 }
