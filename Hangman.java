@@ -29,6 +29,8 @@ public class Hangman extends ConsoleProgram {
     	int randNumber = randNum.nextInt(0, 2);
     	
     	gameWord = word.getWord(randNumber); // getting random word according to randNumber value;
+    	
+    	String exitingWord = "";
   
 		
     	while(gameOn){
@@ -39,7 +41,9 @@ public class Hangman extends ConsoleProgram {
     		
     		println(userChar);
     		
-    		String exitingWord = giveMeNewDesh(userChar); // changes desh --> "-----" => "--S--";
+    		exitingWord = giveMeNewDesh(userChar, exitingWord); // changes desh --> "-----" => "--S--";
+    		
+    		
     		
     		
     		println("The word now looks like this: " + exitingWord);
@@ -68,9 +72,7 @@ public class Hangman extends ConsoleProgram {
 
 
 	
-	private String giveMeNewDesh(char userChar){
-		
-		String newDeshWord = "";
+	private String giveMeNewDesh(char userChar, String newDeshWord){
 		
 		for(int i = 0; i < gameWord.length(); i++){
 			
