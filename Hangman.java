@@ -43,10 +43,10 @@ public class Hangman extends ConsoleProgram {
     		
     		println(userChar);
     		
-    		giveMeNewDesh(userChar);
+    		String exitingWord = giveMeNewDesh(userChar);
     		
     		
-    		println("The word now looks like this: ");
+    		println("The word now looks like this: " + exitingWord);
     		
     		counter++;
     		
