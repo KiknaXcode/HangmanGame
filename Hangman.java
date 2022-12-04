@@ -55,11 +55,13 @@ public class Hangman extends ConsoleProgram {
 	}
     
     
-    boolean incorrectChar = true;
+    
     
     char userChar;
     
     private char usersChar() {
+    	
+    	boolean incorrectChar = true;
     	
     	while(incorrectChar){
     		
