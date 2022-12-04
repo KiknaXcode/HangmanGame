@@ -36,7 +36,7 @@ public class Hangman extends ConsoleProgram {
     	
     	println(gameStartWord());
     	
-    	println("You have " + livesPerTry + "guessess left.");
+    	println("You have " + livesPerTry + " guessess left.");
     	
     	
   
@@ -122,7 +122,7 @@ public class Hangman extends ConsoleProgram {
 			return false;
 		}else{
 			livesPerTry--;
-			println("You have " + livesPerTry + "guessess left.");
+			println("You have " + livesPerTry + " guessess left.");
 			return true;
 		}
 		
