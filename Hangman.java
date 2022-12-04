@@ -39,7 +39,7 @@ public class Hangman extends ConsoleProgram {
     		
     		println(userChar);
     		
-    		String exitingWord = giveMeNewDesh(userChar);
+    		String exitingWord = giveMeNewDesh(userChar); // changes desh --> "-----" => "--S--";
     		
     		
     		println("The word now looks like this: " + exitingWord);
@@ -58,7 +58,7 @@ public class Hangman extends ConsoleProgram {
     private char usersChar() {
 		String userStringChar = readLine("Your guess: "); // getting single letter string
 		
-		userStringChar.toUpperCase();
+		userStringChar = userStringChar.toUpperCase();
 		
 		char userChar = userStringChar.charAt(0);
 		
