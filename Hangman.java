@@ -47,7 +47,10 @@ public class Hangman extends ConsoleProgram {
     		
     		char userChar = usersChar(); // converting string to char and returns it
     		
+    		
     		String exitingWord = giveMeNewDesh(userChar); // changes desh --> "-----" => "--S--";
+    		
+    		printingSystem(userChar);
     		
     		
     		println("The word now looks like this: " + exitingWord);
@@ -80,9 +83,6 @@ public class Hangman extends ConsoleProgram {
     		
     		incorrectChar = checkCharType(userChar);
     		
-    		println("hello)");
-    		
-    		printingSystem();
     		
     	}
     	
@@ -138,7 +138,7 @@ public class Hangman extends ConsoleProgram {
 		return deshWord;
 	}
 	
-	private void printingSystem(){
+	private void printingSystem(char userChar){
 		
 		println("There are no chosen Letter in the word");
 	    livesPerTry--;
