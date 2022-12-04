@@ -37,6 +37,7 @@ public class Hangman extends ConsoleProgram {
     		
     		char userChar = usersChar(); // converting string to char and returns it
     		
+    		
     		println(userChar);
     		
     		String exitingWord = giveMeNewDesh(userChar); // changes desh --> "-----" => "--S--";
@@ -54,15 +55,26 @@ public class Hangman extends ConsoleProgram {
 	}
     
     
+    boolean incorrectChar = true;
+    
+    char userChar;
     
     private char usersChar() {
-		String userStringChar = readLine("Your guess: "); // getting single letter string
-		
-		userStringChar = userStringChar.toUpperCase();
-		
-		char userChar = userStringChar.charAt(0);
-		
-		return userChar;
+    	
+    	while(incorrectChar){
+    		
+    		String userStringChar = readLine("Your guess: "); // getting single letter string
+    		
+    		userStringChar = userStringChar.toUpperCase();
+    		
+    		userChar = userStringChar.charAt(0);
+    		
+    		incorrectChar = checkCharType(userChar);
+    		
+    	}
+    	
+    	return userChar;
+
 	}
 
 
@@ -92,6 +104,15 @@ public class Hangman extends ConsoleProgram {
 		
 		
 	}	
+	
+	private boolean checkCharType(char userChar){
+		if(Character.isLetter(userChar)){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
 
 
 }
