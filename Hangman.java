@@ -58,6 +58,8 @@ public class Hangman extends ConsoleProgram {
     private char usersChar() {
 		String userStringChar = readLine("Your guess: "); // getting single letter string
 		
+		userStringChar.toUpperCase();
+		
 		char userChar = userStringChar.charAt(0);
 		
 		return userChar;
