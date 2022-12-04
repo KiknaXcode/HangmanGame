@@ -107,9 +107,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private boolean checkCharType(char userChar){
 		if(Character.isLetter(userChar)){
-			return true;
-		}else{
-			return true;
+			return false;
 		}
 		
 	}
