@@ -83,6 +83,8 @@ public class Hangman extends ConsoleProgram {
     		
     		incorrectChar = checkCharType(userChar);
     		
+    		printingSystem(inccorrectChar);
+    		
     	}
     	
     	return userChar;
@@ -121,8 +123,7 @@ public class Hangman extends ConsoleProgram {
 		if(Character.isLetter(userChar)){
 			return false;
 		}else{
-			livesPerTry--;
-			println("You have " + livesPerTry + " guessess left.");
+			
 			return true;
 		}
 		
@@ -136,6 +137,14 @@ public class Hangman extends ConsoleProgram {
 				deshWord = deshWord +  "-";	
 		}
 		return deshWord;
+	}
+	
+	private void printingSystem(boolean printLogic){
+		if(printLogic){
+			println("There are no chosen Letter in the word");
+	    	livesPerTry--;
+	    	println("You have " + livesPerTry + " guessess left.");
+		}
 	}
 		
 		
