@@ -29,10 +29,6 @@ public class Hangman extends ConsoleProgram {
     	int randNumber = randNum.nextInt(0, 9);
     	
     	gameWord = word.getWord(randNumber); // getting random word according to randNumber value;
-    	
-    	String deshWord = changeWordWithDesh(gameWord); // returning desh word with length of word;
-    	
-    	println(deshWord);
   
 		
     	while(gameOn){
@@ -69,25 +65,12 @@ public class Hangman extends ConsoleProgram {
 
 
 
-	private String changeWordWithDesh(String gameWord){  // changes words with desh examples -->   hello -- > "-----"
-    	int wordLength = gameWord.length();
-    	
-    	String deshWord = "";
-    	
-    	for(int i = 0; i < wordLength; i++){
-    		
-    		deshWord = deshWord +  "-";
-    	}
-    	
-    	return deshWord;
-    	
-    }
 	
 	private String giveMeNewDesh(char userChar){
 		
 		String newDeshWord = "";
 		
-		for(int i = 0; i < 40; i++){
+		for(int i = 0; i < gameWord.length(); i++){
 			
 			if(gameWord.charAt(i) == userChar){
 				
