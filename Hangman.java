@@ -47,7 +47,7 @@ public class Hangman extends ConsoleProgram {
     // returns random string from list of Lexicon
     private String takeWordFromList(){
     	
-    	int randNumber = randNum.nextInt(0, 10);
+    	int randNumber = randNum.nextInt(0, 1);
     	
     	listWord = word.getWord(randNumber); // getting random word according to randNumber value;
     	
