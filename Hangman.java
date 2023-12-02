@@ -18,28 +18,39 @@ public class Hangman extends ConsoleProgram {
 	
 	boolean gameOn = true;
 	
-	String gameWord;
+	private String listWord;
 	
 	int livesPerTry = 8;
-	
-	
 	
     public void run() {
     	
     	println("Welcome to Hangman");
     	
+    	String listWord = takeWordFromList();
+    	
+    	println(listWord);
+
+    	
+    	// println(gameStartWord());
+    	
+    	// println("You have " + livesPerTry + " guessess left.");
+    }
+
+    
+    private String takeWordFromList(){
     	
     	// in first case, we need to take word from list
+    	
+    	
     	int randNumber = randNum.nextInt(0, 1);
     	
-    	gameWord = word.getWord(randNumber); // getting random word according to randNumber value;
-    	
-    	println(gameStartWord());
-    	
-    	println("You have " + livesPerTry + " guessess left.");
+    	listWord = word.getWord(randNumber); // getting random word according to randNumber value;
     	
     	
-  
+    	return listWord;
+    }
+    	
+  /*
 		
     	while(gameOn){
     		
@@ -63,6 +74,9 @@ public class Hangman extends ConsoleProgram {
     		
     	}
 	}
+	
+	
+	*/
     
     
     
@@ -97,9 +111,9 @@ public class Hangman extends ConsoleProgram {
 		
 		String newDeshWord = "";
 		
-		for(int i = 0; i < gameWord.length(); i++){
+		for(int i = 0; i < listWord.length(); i++){
 			
-			if(gameWord.charAt(i) == userChar){
+			if(listWord.charAt(i) == userChar){
 				
 				newDeshWord = newDeshWord +  userChar;
 				
@@ -132,7 +146,7 @@ public class Hangman extends ConsoleProgram {
 	private String gameStartWord(){
 		String deshWord = "";
 		
-		for(int i = 0; i < gameWord.length(); i++){		
+		for(int i = 0; i < listWord.length(); i++){		
 				deshWord = deshWord +  "-";	
 		}
 		return deshWord;
