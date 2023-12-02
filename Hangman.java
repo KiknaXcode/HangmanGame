@@ -42,7 +42,7 @@ public class Hangman extends ConsoleProgram {
     	// in first case, we need to take word from list
     	
     	
-    	int randNumber = randNum.nextInt(0, 1);
+    	int randNumber = randNum.nextInt(0, 10);
     	
     	listWord = word.getWord(randNumber); // getting random word according to randNumber value;
     	
