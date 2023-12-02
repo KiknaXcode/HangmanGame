@@ -76,27 +76,36 @@ public class Hangman extends ConsoleProgram {
 	
     private void playWhileLivesExists(String listWord, String dashWord){
     	
-    	// while(gameOn){
+    	while(gameOn){
     		
     		String ch = readLine("Enter your guess: ");
     		
     		if(listWord.contains(ch)){
-    			realCh = ch.charAt(0);
-    			updateDash(ch);
+    			char guess = ch.charAt(0);
+    			updateDash(guess);
+    			println("Correct guess! Updated word: " + dashWord);
+    		}else {
+    		    livesPerTry--;
+    		    println("Incorrect guess! Lives remaining: " + livesPerTry);
     		}
+    	}
     }
     
     private void updateDash(char guess) {
-        StringBuilder updatedDash = new StringBuilder(dashWord);
+    	
+        char[] updatedDash = dashWord.toCharArray(); // converts word into char array.
 
         for (int i = 0; i < listWord.length(); i++) {
             if (listWord.charAt(i) == guess) {
-                updatedDash.setCharAt(i, guess);
+                updatedDash[i] = guess;
             }
         }
 
-        dashWord = updatedDash.toString();
+        dashWord = new String(updatedDash);
+        
+        println(dashWord);
     }
+
 
     
     
