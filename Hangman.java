@@ -28,31 +28,36 @@ public class Hangman extends ConsoleProgram {
     	
     	String listWord = takeWordFromList();
     	
-    	println(listWord);
+    	playWhileLivesExists(); // give user right to guess numbers while lives exists
 
+    	println(gameStartWord());
     	
-    	// println(gameStartWord());
-    	
+
+	}
     	// println("You have " + livesPerTry + " guessess left.");
-    }
+    
 
     
+    // in first case, we need to take word from list
+    // returns random string from list of Lexicon
     private String takeWordFromList(){
-    	
-    	// in first case, we need to take word from list
-    	
     	
     	int randNumber = randNum.nextInt(0, 10);
     	
     	listWord = word.getWord(randNumber); // getting random word according to randNumber value;
     	
-    	
     	return listWord;
     }
+    
+    
+    
+    
+    
+    private void playWhileLivesExists(){
     	
-  /*
-		
     	while(gameOn){
+    		
+    		
     		
     		int counter = 0;
     		
@@ -73,14 +78,8 @@ public class Hangman extends ConsoleProgram {
     		}
     		
     	}
-	}
-	
-	
-	*/
-    
-    
-    
-    
+    }
+
     char userChar;
     
     private char usersChar() {
