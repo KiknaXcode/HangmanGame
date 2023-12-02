@@ -83,7 +83,7 @@ public class Hangman extends ConsoleProgram {
     		if(listWord.contains(ch)){
     			char guess = ch.charAt(0);
     			updateDash(guess);
-    			println("Correct guess! Updated word: " + dashWord);
+
     		}else {
     		    livesPerTry--;
     		    println("Incorrect guess! Lives remaining: " + livesPerTry);
@@ -100,10 +100,8 @@ public class Hangman extends ConsoleProgram {
                 updatedDash[i] = guess;
             }
         }
-
         dashWord = new String(updatedDash);
         
-        println(dashWord);
     }
 
 
