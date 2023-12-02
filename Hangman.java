@@ -20,19 +20,21 @@ public class Hangman extends ConsoleProgram {
 	
 	private String listWord;
 	
+	private String dashWord;
+	
 	int livesPerTry = 8;
 	
     public void run() {
     	
     	println("Welcome to Hangman");
     	
-    	String listWord = takeWordFromList();
+    	listWord = takeWordFromList();
     	
-    	String dashWord = convertWordIntoDash(listWord);
+    	dashWord = convertWordIntoDash(listWord);
     	
     	println(dashWord);
     	
-    	// playWhileLivesExists(); // give user right to guess numbers while lives exists
+    	playWhileLivesExists(listWord, dashWord); // give user right to guess numbers while lives exists
 
     	
 
@@ -55,7 +57,6 @@ public class Hangman extends ConsoleProgram {
     
     // takes String like "COMPUTER" and converts it into dash representation
     // and then returns it.
-    
     // for example: "COMPUTER" --> "--------"
     
 	private String convertWordIntoDash(String listWord){
@@ -72,16 +73,33 @@ public class Hangman extends ConsoleProgram {
     
     
 	
-	/*
-    private void playWhileLivesExists(){
+	
+    private void playWhileLivesExists(String listWord, String dashWord){
     	
-    	while(gameOn){
+    	// while(gameOn){
     		
+    		String ch = readLine("Enter your guess: ");
     		
-    		
-
-    	}
+    		if(listWord.contains(ch)){
+    			updateDash(ch);
+    		}
     }
-    */
+    
+    private void updateDash(char guess) {
+        StringBuilder updatedDash = new StringBuilder(dashWord);
+
+        for (int i = 0; i < listWord.length(); i++) {
+            if (listWord.charAt(i) == guess) {
+                updatedDash.setCharAt(i, guess);
+            }
+        }
+
+        dashWord = updatedDash.toString();
+    }
+
+    
+    
+    
+    
 
 }
