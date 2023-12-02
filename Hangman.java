@@ -73,7 +73,6 @@ public class Hangman extends ConsoleProgram {
     
     
 	
-	
     private void playWhileLivesExists(String listWord, String dashWord){
     	
     	while(gameOn){
@@ -87,13 +86,22 @@ public class Hangman extends ConsoleProgram {
     		}else {
     		    livesPerTry--;
     		    println("Incorrect guess! Lives remaining: " + livesPerTry);
+    	    	if(livesPerTry <= 0){
+    	    		gameOn = false;
+    	    	}
     		}
     	}
     }
     
+    
+    
+    // takes guess char of user and checks if char exists in listWord.
+    // for example: when BUOY is a word and guess is B,
+    // it will update like B---;
+    
     private void updateDash(char guess) {
     	
-        char[] updatedDash = dashWord.toCharArray(); // converts word into char array.
+        char[] updatedDash = dashWord.toCharArray(); // converts dash into char array.
 
         for (int i = 0; i < listWord.length(); i++) {
             if (listWord.charAt(i) == guess) {
@@ -104,10 +112,5 @@ public class Hangman extends ConsoleProgram {
         println("Correct guess! Your world now looks like this: " + dashWord);
     }
 
-
-    
-    
-    
-    
 
 }
