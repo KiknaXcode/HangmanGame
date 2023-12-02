@@ -72,7 +72,7 @@ public class Hangman extends ConsoleProgram {
     
     
 	
-	
+	/*
     private void playWhileLivesExists(){
     	
     	while(gameOn){
@@ -82,15 +82,6 @@ public class Hangman extends ConsoleProgram {
 
     	}
     }
-
-    
-    
-    
- 
-
-
-		
-		
-
+    */
 
 }
