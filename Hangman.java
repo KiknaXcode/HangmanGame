@@ -88,6 +88,7 @@ public class Hangman extends ConsoleProgram {
     		    println("Incorrect guess! Lives remaining: " + livesPerTry);
     	    	if(livesPerTry <= 0){
     	    		gameOn = false;
+    	    		println("You lose a Game");
     	    	}
     		}
     	}
