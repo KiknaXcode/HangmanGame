@@ -81,6 +81,7 @@ public class Hangman extends ConsoleProgram {
     		String ch = readLine("Enter your guess: ");
     		
     		if(listWord.contains(ch)){
+    			realCh = ch.charAt(0);
     			updateDash(ch);
     		}
     }
