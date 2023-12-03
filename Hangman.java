@@ -80,9 +80,9 @@ public class Hangman extends ConsoleProgram {
     	while(gameOn){
     		
     		String ch = readLine("Enter your guess: ");
+    		char guess = ch.toUpperCase().charAt(0); // converts user input letter into uppercase
     		
     		if(listWord.contains(ch)){
-    			char guess = ch.charAt(0);
     			updateDash(guess);
 
     		}else {
