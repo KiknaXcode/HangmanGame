@@ -13,7 +13,25 @@ public class HangmanCanvas extends GCanvas {
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
-		/* You fill this in */
+	    removeAll();
+	    addThreeMainLine();
+	}
+
+	private void addThreeMainLine() {
+	    int x = getWidth() / 2 - BEAM_LENGTH;
+	    int y = getHeight() / 2 - SCAFFOLD_HEIGHT / 2;
+	    
+	    // Draw scaffold
+	    GLine scaffoldLine = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
+	    add(scaffoldLine);
+	    
+	    // Draw beam
+	    GLine beamLine = new GLine(x, y, x + BEAM_LENGTH, y);
+	    add(beamLine);
+	    
+	    // Draw rope (you can skip this if you don't want to show the rope initially)
+	    GLine ropeLine = new GLine(x + BEAM_LENGTH, y, x + BEAM_LENGTH, y + ROPE_LENGTH);
+	    add(ropeLine);
 	}
 
 /**
@@ -36,12 +54,22 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	
+	
+	private void addThreeLine(){
+		
+		
+	}
+	
+	
 	private void drawHead(){
 		GOval oval = new GOval(40, 40, 40, 40);
 		oval.setFilled(true);
 		oval.setFillColor(rg.nextColor());
 		add(oval);
 	}
+	
+	
+
 	
 
 /* Constants for the simple version of the picture (in pixels) */
