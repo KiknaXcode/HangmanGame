@@ -43,7 +43,7 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far;
  */
 	
-	private GLabel letterLabel;
+	private GLabel letterLabel = new GLabel("", 0, 0);
 	
 	public void displayWord(String word) {
 		
