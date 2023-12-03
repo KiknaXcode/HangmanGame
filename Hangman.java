@@ -46,6 +46,7 @@ public class Hangman extends ConsoleProgram {
     public void init() { 
     	canvas = new HangmanCanvas(); 
     	add(canvas); 
+    	canvas.reset();
     } 
 
     	// println("You have " + livesPerTry + " guessess left.");
@@ -102,11 +103,9 @@ public class Hangman extends ConsoleProgram {
 
     		}else {
     		    livesPerTry--;
-    		    canvas.noteIncorrectGuess(guess.charAt(0));
     		    println("Incorrect guess! Lives remaining: " + livesPerTry);
-    		    
-    		    canvas.reset();
     		    canvas.noteIncorrectGuess(guess.charAt(0));
+    		    
     	    	if(livesPerTry <= 0){
     	    		gameOn = false;
     	    		println("You lose a Game");
@@ -151,5 +150,10 @@ public class Hangman extends ConsoleProgram {
     	}
     	
     	return false;
+    }
+    
+    // resets the game
+    private void tryAgin(){
+    	canvas.reset();
     }
 }
