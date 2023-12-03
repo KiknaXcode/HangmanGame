@@ -89,6 +89,11 @@ public class Hangman extends ConsoleProgram {
     	while(gameOn){
     		
     		String ch = readLine("Enter your guess: ");
+    		boolean isLetter = checkIfLetter(ch);
+    		if(!isLetter){
+    			println("Please enter Valid char! ");
+    			continue; // if char is valid restart while loop
+    		}
     		String guess = ch.toUpperCase(); // converts user input letter into uppercase
     		
     		if(listWord.contains(guess)){
@@ -127,4 +132,20 @@ public class Hangman extends ConsoleProgram {
     }
 
 
+    
+    // checks if user's input char is a letter
+    private boolean checkIfLetter(String ch){
+    	
+    	char guess = ch.charAt(0);
+    	
+    	// with aski standard, defining if guess is letter
+    	// for reminding. in this standard for example: 'a' representation
+    	// is number 97 in computer's memory.
+    	
+    	if(65 <= guess && guess <= 90 || guess <= 97 && guess <=122){
+    		return true;
+    	}
+    	
+    	return false;
+    }
 }
