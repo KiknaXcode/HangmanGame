@@ -142,7 +142,7 @@ public class Hangman extends ConsoleProgram {
     	// for reminding. in this standard for example: 'a' representation
     	// is number 97 in computer's memory.
     	
-    	if(65 <= guess && guess <= 90 || guess <= 97 && guess <=122){
+    	if((65 <= guess && guess <= 90) || (guess <= 97 && guess <=122)){
     		return true;
     	}
     	
