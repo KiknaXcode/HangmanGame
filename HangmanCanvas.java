@@ -31,11 +31,10 @@ public class HangmanCanvas extends GCanvas {
  * on the scaffold and adds the letter to the list of incorrect
  * guesses that appears at the bottom of the window.
  */
-	public void noteIncorrectGuess(int livesLeft) {
-		if(livesLeft == 7){
-			drawHead();
-		}
+	public void noteIncorrectGuess(char letter) {
+		drawHead();
 	}
+	
 	
 	private void drawHead(){
 		GOval oval = new GOval(40, 40, 40, 40);
@@ -43,6 +42,7 @@ public class HangmanCanvas extends GCanvas {
 		oval.setFillColor(rg.nextColor());
 		add(oval);
 	}
+	
 
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;

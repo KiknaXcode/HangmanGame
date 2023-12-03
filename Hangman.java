@@ -24,9 +24,11 @@ public class Hangman extends ConsoleProgram {
 	
 	int livesPerTry = 8;
 	
+	private HangmanCanvas canvas;
+	
     public void run() {
     	
-    	println("Welcome to Hangman");
+    	// println("Welcome to Hangman");
     	
     	listWord = takeWordFromList();
     	
@@ -39,6 +41,13 @@ public class Hangman extends ConsoleProgram {
     	
 
 	}
+    
+    
+    public void init() { 
+    	canvas = new HangmanCanvas(); 
+    	add(canvas); 
+    } 
+
     	// println("You have " + livesPerTry + " guessess left.");
     
 
@@ -89,8 +98,7 @@ public class Hangman extends ConsoleProgram {
     		}else {
     		    livesPerTry--;
     		    println("Incorrect guess! Lives remaining: " + livesPerTry);
-    		    HangmanCanvas object = new HangmanCanvas();
-    		    object.noteIncorrectGuess();
+    		    canvas.noteIncorrectGuess('q');
     	    	if(livesPerTry <= 0){
     	    		gameOn = false;
     	    		println("You lose a Game");
