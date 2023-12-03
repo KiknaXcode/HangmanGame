@@ -32,6 +32,13 @@ public class Hangman extends ConsoleProgram {
     	
     	listWord = takeWordFromList();
     	
+    	
+    	String dash = "";
+    	for(int i = 0; i < listWord.length(); i++){
+    		dash += "-";
+    	}
+    	println(dash);
+    	
     	dashWord = convertWordIntoDash(listWord);
     	
     	println(dashWord);
