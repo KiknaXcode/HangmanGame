@@ -42,17 +42,15 @@ public class HangmanCanvas extends GCanvas {
  */
 	public void displayWord(String word) {
 		
+		
+		
 	    int x = getWidth() / 2 - BEAM_LENGTH;
 	    int y = getHeight() / 2 + 50; // Adjust the y-coordinate based on your design
 
-	    for (int i = 0; i < word.length(); i++) {
-	        char ch = word.charAt(i);
-	        if (ch != '-') {
-	            GLabel letterLabel = new GLabel("" + ch, x + i * 20, y);
-	            letterLabel.setFont("Arial-Bold-20"); // Adjust font and size based on your design
-	            add(letterLabel);
-	        }
-	    }
+	    GLabel letterLabel = new GLabel(word, x + 20, y);
+	    letterLabel.setFont("Arial-Bold-20"); // Adjust font and size based on your design
+	    add(letterLabel);
+
 	}
 
 /**
