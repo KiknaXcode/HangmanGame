@@ -10,6 +10,13 @@ import acm.util.RandomGenerator;
 public class HangmanCanvas extends GCanvas {
 	
 	RandomGenerator rg = RandomGenerator.getInstance();
+	
+    private boolean headDrawn = false;
+    private boolean bodyDrawn = false;
+    private boolean leftHandDrawn = false;
+    private boolean rightHandDrawn = false;
+    private boolean leftFootDrawn = false;
+    private boolean rightFootDrawn = false;
 
 /** Resets the display so that only the three main lines appear */
 	public void reset() {
@@ -182,11 +189,6 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
-    private boolean headDrawn = false;
-    private boolean bodyDrawn = false;
-    private boolean leftHandDrawn = false;
-    private boolean rightHandDrawn = false;
-    private boolean leftFootDrawn = false;
-    private boolean rightFootDrawn = false;
+
 
 }
