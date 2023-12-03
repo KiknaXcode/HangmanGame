@@ -72,6 +72,8 @@ public class Hangman extends ConsoleProgram {
 	}	
     
     
+	// main punction is this.
+	// its obligations is to play the game while lives exists for user
 	
     private void playWhileLivesExists(String listWord, String dashWord){
     	
@@ -86,6 +88,8 @@ public class Hangman extends ConsoleProgram {
     		}else {
     		    livesPerTry--;
     		    println("Incorrect guess! Lives remaining: " + livesPerTry);
+    		    HangmanCanvas object = new HangmanCanvas();
+    		    object.noteIncorrectGuess();
     	    	if(livesPerTry <= 0){
     	    		gameOn = false;
     	    		println("You lose a Game");

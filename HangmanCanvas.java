@@ -5,8 +5,11 @@
  */
 
 import acm.graphics.*;
+import acm.util.RandomGenerator;
 
 public class HangmanCanvas extends GCanvas {
+	
+	RandomGenerator rg = RandomGenerator.getInstance();
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -28,8 +31,11 @@ public class HangmanCanvas extends GCanvas {
  * on the scaffold and adds the letter to the list of incorrect
  * guesses that appears at the bottom of the window.
  */
-	public void noteIncorrectGuess(char letter) {
-		/* You fill this in */
+	public void noteIncorrectGuess() {
+		GOval oval = new GOval(rg.nextInt(200, 500), rg.nextInt(200, 500), 40, 40);
+		oval.setFilled(true);
+		oval.setFillColor(rg.nextColor());
+		add(oval);
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
