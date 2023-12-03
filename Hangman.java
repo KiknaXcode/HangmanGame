@@ -138,11 +138,11 @@ public class Hangman extends ConsoleProgram {
     	
     	char guess = ch.charAt(0);
     	
-    	// with aski standard, defining if guess is letter
+    	// with ASCII standard, defining if guess is letter
     	// for reminding. in this standard for example: 'a' representation
     	// is number 97 in computer's memory.
     	
-    	if((65 <= guess && guess <= 90) || (guess <= 97 && guess <=122)){
+    	if((65 <= guess && guess <= 90) || (guess >= 97 && guess <=122)){
     		return true;
     	}
     	
