@@ -18,6 +18,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 	private void addThreeMainLine() {
+		
 	    int x = getWidth() / 2 - BEAM_LENGTH;
 	    int y = getHeight() / 2 - SCAFFOLD_HEIGHT / 2;
 	    
@@ -29,7 +30,7 @@ public class HangmanCanvas extends GCanvas {
 	    GLine beamLine = new GLine(x, y, x + BEAM_LENGTH, y);
 	    add(beamLine);
 	    
-	    // Draw rope (you can skip this if you don't want to show the rope initially)
+	    // Draw rope
 	    GLine ropeLine = new GLine(x + BEAM_LENGTH, y, x + BEAM_LENGTH, y + ROPE_LENGTH);
 	    add(ropeLine);
 	}
@@ -37,10 +38,21 @@ public class HangmanCanvas extends GCanvas {
 /**
  * Updates the word on the screen to correspond to the current
  * state of the game.  The argument string shows what letters have
- * been guessed so far; unguessed letters are indicated by hyphens.
+ * been guessed so far;
  */
 	public void displayWord(String word) {
-		/* You fill this in */
+		
+	    int x = getWidth() / 2 - BEAM_LENGTH;
+	    int y = getHeight() / 2 + 50; // Adjust the y-coordinate based on your design
+
+	    for (int i = 0; i < word.length(); i++) {
+	        char ch = word.charAt(i);
+	        if (ch != '-') {
+	            GLabel letterLabel = new GLabel("" + ch, x + i * 20, y);
+	            letterLabel.setFont("Arial-Bold-20"); // Adjust font and size based on your design
+	            add(letterLabel);
+	        }
+	    }
 	}
 
 /**

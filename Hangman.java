@@ -130,6 +130,7 @@ public class Hangman extends ConsoleProgram {
             }
         }
         dashWord = new String(updatedDash);
+        canvas.displayWord(dashWord);
         println("Correct guess! Your world now looks like this: " + dashWord);
     }
 
