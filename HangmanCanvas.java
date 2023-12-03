@@ -11,12 +11,14 @@ public class HangmanCanvas extends GCanvas {
 	
 	RandomGenerator rg = RandomGenerator.getInstance();
 
-/** Resets the display so that only the scaffold appears */
+/** Resets the display so that only the three main lines appear */
 	public void reset() {
 	    removeAll();
 	    addThreeMainLine();
 	}
 
+	
+	// adds three main lines
 	private void addThreeMainLine() {
 		
 	    int x = getWidth() / 2 - BEAM_LENGTH;
@@ -40,14 +42,16 @@ public class HangmanCanvas extends GCanvas {
  * state of the game.  The argument string shows what letters have
  * been guessed so far;
  */
+	
+	private GLabel letterLabel;
+	
 	public void displayWord(String word) {
 		
-		
+		remove(letterLabel);
 		
 	    int x = getWidth() / 2 - BEAM_LENGTH;
-	    int y = getHeight() / 2 + 50; // Adjust the y-coordinate based on your design
 
-	    GLabel letterLabel = new GLabel(word, x + 20, y);
+	    letterLabel = new GLabel(word, x + 50, getHeight() - 50);
 	    letterLabel.setFont("Arial-Bold-20"); // Adjust font and size based on your design
 	    add(letterLabel);
 
@@ -64,11 +68,7 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	
-	
-	private void addThreeLine(){
-		
-		
-	}
+
 	
 	
 	private void drawHead(){
