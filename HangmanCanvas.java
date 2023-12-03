@@ -44,6 +44,7 @@ public class HangmanCanvas extends GCanvas {
  */
 	
 	private GLabel letterLabel = new GLabel("", 0, 0);
+
 	
 	public void displayWord(String word) {
 		
