@@ -32,13 +32,6 @@ public class Hangman extends ConsoleProgram {
     	
     	listWord = takeWordFromList();
     	
-    	
-    	String dash = "";
-    	for(int i = 0; i < listWord.length(); i++){
-    		dash += "-";
-    	}
-    	println(dash);
-    	
     	dashWord = convertWordIntoDash(listWord);
     	
     	println(dashWord);
@@ -88,7 +81,7 @@ public class Hangman extends ConsoleProgram {
 	}	
     
     
-	// main punction is this.
+	// main function is this.
 	// its obligations is to play the game while lives exists for user
 	
     private void playWhileLivesExists(String listWord, String dashWord){
