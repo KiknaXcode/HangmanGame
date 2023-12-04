@@ -35,7 +35,7 @@ public class Hangman extends ConsoleProgram {
 	
     public void run() {
     	
-    	// println("Welcome to Hangman");
+    	println("Welcome to Hangman");
     	
     	listWord = takeWordFromList();
     	
@@ -114,6 +114,7 @@ public class Hangman extends ConsoleProgram {
     		    canvas.noteIncorrectGuess(guess.charAt(0));
     		    
     	    	if(livesPerTry <= 0){
+    	    		canvas.displayWord(listWord);
     	    		gameOn = false;
     	    		println("You lose a Game");
     	    	}
