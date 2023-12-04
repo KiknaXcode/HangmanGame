@@ -24,25 +24,6 @@ public class HangmanCanvas extends GCanvas {
 	    addThreeMainLine();
 	}
 
-	
-    int x = getWidth() / 2 - BEAM_LENGTH;
-    int y = getHeight() / 2 - SCAFFOLD_HEIGHT / 2;
-	// adds three main lines
-	public void addThreeMainLine() {
-		
-
-	    // Draw scaffold
-	    GLine scaffoldLine = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
-	    add(scaffoldLine);
-	    
-	    // Draw beam
-	    GLine beamLine = new GLine(x, y, x + BEAM_LENGTH, y);
-	    add(beamLine);
-	    
-	    // Draw rope
-	    GLine ropeLine = new GLine(x + BEAM_LENGTH, y, x + BEAM_LENGTH, y + ROPE_LENGTH);
-	    add(ropeLine);
-	}
 
 /**
  * Updates the word on the screen to correspond to the current
@@ -94,13 +75,33 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	
-    private GOval head;
+    int x = ARM_OFFSET_FROM_HEAD;
+    int y = getHeight() / 2 + ARM_OFFSET_FROM_HEAD / 4;
+	// adds three main lines
+	public void addThreeMainLine() {
+		
 
+	    // Draw scaffold
+	    GLine scaffoldLine = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
+	    add(scaffoldLine);
+	    
+	    // Draw beam
+	    GLine beamLine = new GLine(x, y, x + BEAM_LENGTH, y);
+	    add(beamLine);
+	    
+	    // Draw rope
+	    GLine ropeLine = new GLine(x + BEAM_LENGTH, y, x + BEAM_LENGTH, y + ROPE_LENGTH);
+	    add(ropeLine);
+	}
+	
+	
+	
+    private GOval head;
+	
     
 	private void drawHead() {
-	    x = x + BEAM_LENGTH;
+	    x = x + BEAM_LENGTH - HEAD_RADIUS;
 	    y = y + ROPE_LENGTH;
-
 
 	    // Draw the head as a filled oval
 	    head = new GOval(x, y, 2 * HEAD_RADIUS, 2 * HEAD_RADIUS);
