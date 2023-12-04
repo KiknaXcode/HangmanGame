@@ -89,8 +89,16 @@ public class Hangman extends ConsoleProgram {
 	
     private void playWhileLivesExists(String listWord, String dashWord){
     	
+    	
+
+    	
     	while(gameOn){
     		
+        	if(listWord.equals(dashWord)){
+        		println("You Win a Game");
+        		gameOn = false;
+        	}
+        	
     		String ch = readLine("Enter your guess: ");
     		boolean isLetter = checkIfLetter(ch);
     		if(!isLetter){

@@ -77,10 +77,11 @@ public class HangmanCanvas extends GCanvas {
 	
     int x = ARM_OFFSET_FROM_HEAD;
     int y = getHeight() / 2 + ARM_OFFSET_FROM_HEAD / 4;
+    
+    
 	// adds three main lines
 	public void addThreeMainLine() {
 		
-
 	    // Draw scaffold
 	    GLine scaffoldLine = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
 	    add(scaffoldLine);
@@ -99,18 +100,18 @@ public class HangmanCanvas extends GCanvas {
     private GOval head;
 	
     
+ // Draw the head
 	private void drawHead() {
 	    x = x + BEAM_LENGTH - HEAD_RADIUS;
 	    y = y + ROPE_LENGTH;
 
-	    // Draw the head as a filled oval
 	    head = new GOval(x, y, 2 * HEAD_RADIUS, 2 * HEAD_RADIUS);
 
 	    add(head);
 	}
 
 	
-	
+	// draw body
 	private void drawBody() {
 		
 	    x = x + HEAD_RADIUS;
@@ -120,11 +121,11 @@ public class HangmanCanvas extends GCanvas {
 	    add(bodyLine);
 	}
 	
+	
+	// Draw the left hand
 	private void drawLeftHand() {
 
 		y = y + BODY_LENGTH/2;
-		
-	    // Draw the left hand
 	    GLine leftHandLineStraight = new GLine(x, y, x - UPPER_ARM_LENGTH, y);
 	    GLine leftHandLineDown = new GLine(x - UPPER_ARM_LENGTH, y, x - UPPER_ARM_LENGTH, y + LOWER_ARM_LENGTH);
 	    add(leftHandLineStraight);
@@ -133,10 +134,8 @@ public class HangmanCanvas extends GCanvas {
 	
 	
 	
+	// Draw the left hand
 	private void drawRightHand() {
-
-		
-	    // Draw the left hand
 	    GLine leftHandLineStraight = new GLine(x, y, x + UPPER_ARM_LENGTH, y);
 	    GLine leftHandLineDown = new GLine(x + UPPER_ARM_LENGTH, y, x + UPPER_ARM_LENGTH, y + LOWER_ARM_LENGTH);
 	    add(leftHandLineStraight);
