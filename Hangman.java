@@ -15,7 +15,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private RandomGenerator randNum = RandomGenerator.getInstance();
 	private HangmanLexicon word = new HangmanLexicon();
-	private static final int LEXICON_MAX_WORD_NUMBER = 120000;
+	private static final int LEXICON_MAX_WORD_NUMBER = 10;
 	
 	boolean gameOn = true;
 	
