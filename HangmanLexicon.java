@@ -27,7 +27,7 @@ public class HangmanLexicon extends ConsoleProgram {
             println(wordsList);
             reader.close();
         } catch (IOException e) {
-            println("Error reading the file: " + e.getMessage());
+            println("We have a error");
         }
     }
 
