@@ -88,14 +88,9 @@ public class Hangman extends ConsoleProgram {
 	// its obligations is to play the game while lives exists for user
 	
     private void playWhileLivesExists(String listWord, String dashWord){
-    	
-    	
 
     	
     	while(gameOn){
-    		
-
-        	
     		String ch = readLine("Enter your guess: ");
     		boolean isLetter = checkIfLetter(ch);
     		if(!isLetter){
@@ -108,7 +103,7 @@ public class Hangman extends ConsoleProgram {
     			char guessCh = guess.charAt(0);
     			dashWord = updateDash(guessCh);
     			
-            	if(listWord == dashWord){
+            	if(listWord.equals(dashWord)){
             		println("You Win a Game");
             		gameOn = false;
             	}
