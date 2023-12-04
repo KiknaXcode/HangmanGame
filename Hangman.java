@@ -94,10 +94,7 @@ public class Hangman extends ConsoleProgram {
     	
     	while(gameOn){
     		
-        	if(listWord.equals(dashWord)){
-        		println("You Win a Game");
-        		gameOn = false;
-        	}
+
         	
     		String ch = readLine("Enter your guess: ");
     		boolean isLetter = checkIfLetter(ch);
@@ -109,7 +106,12 @@ public class Hangman extends ConsoleProgram {
     		
     		if(listWord.contains(guess)){
     			char guessCh = guess.charAt(0);
-    			updateDash(guessCh);
+    			dashWord = updateDash(guessCh);
+    			
+            	if(listWord == dashWord){
+            		println("You Win a Game");
+            		gameOn = false;
+            	}
 
     		}else {
     		    livesPerTry--;
@@ -130,7 +132,7 @@ public class Hangman extends ConsoleProgram {
     // for example: when BUOY is a word and guess is B,
     // it will update like B---;
     
-    private void updateDash(char guess) {
+    private String updateDash(char guess) {
     	
         char[] updatedDash = dashWord.toCharArray(); // converts dash into char array.
 
@@ -142,6 +144,7 @@ public class Hangman extends ConsoleProgram {
         dashWord = new String(updatedDash);
         canvas.displayWord(dashWord);
         println("Correct guess! Your world now looks like this: " + dashWord);
+        return dashWord;
     }
 
 
@@ -163,7 +166,7 @@ public class Hangman extends ConsoleProgram {
     }
     
     // resets the game
-    private void tryAgin(){
+    private void tryAgain(){
     	canvas.reset();
     }
 }
