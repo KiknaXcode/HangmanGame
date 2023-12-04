@@ -39,7 +39,7 @@ public class HangmanCanvas extends GCanvas {
 		remove(letterLabel);
 	    int x = getWidth() / 2 - BEAM_LENGTH;
 	    letterLabel = new GLabel(word, x + 50, getHeight() - 50);
-	    letterLabel.setFont("Arial-Bold-20"); // Adjust font and size based on your design
+	    letterLabel.setFont("Arial-10"); // Adjust font and size based on your design
 	    add(letterLabel);
 	    
 	    if(livesLeft <=0){

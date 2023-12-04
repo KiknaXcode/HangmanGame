@@ -138,7 +138,7 @@ public class Hangman extends ConsoleProgram {
             }
         }
         dashWord = new String(updatedDash);
-        canvas.displayWord(dashWord, 0);
+        canvas.displayWord(dashWord, 1); // we are giving 1 to do not go into if logic in this method. we need to do it from other place in code.
         println("Correct guess! Your world now looks like this: " + dashWord);
         return dashWord;
     }
