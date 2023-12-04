@@ -114,7 +114,7 @@ public class Hangman extends ConsoleProgram {
     		    canvas.noteIncorrectGuess(guess.charAt(0));
     		    
     	    	if(livesPerTry <= 0){
-    	    		canvas.displayWord(listWord);
+    	    		canvas.displayWord(listWord, livesPerTry);
     	    		gameOn = false;
     	    		println("You lose a Game");
     	    	}
