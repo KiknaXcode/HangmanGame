@@ -25,12 +25,12 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 	
+    int x = getWidth() / 2 - BEAM_LENGTH;
+    int y = getHeight() / 2 - SCAFFOLD_HEIGHT / 2;
 	// adds three main lines
 	private void addThreeMainLine() {
 		
-	    int x = getWidth() / 2 - BEAM_LENGTH;
-	    int y = getHeight() / 2 - SCAFFOLD_HEIGHT / 2;
-	    
+
 	    // Draw scaffold
 	    GLine scaffoldLine = new GLine(x, y, x, y + SCAFFOLD_HEIGHT);
 	    add(scaffoldLine);
@@ -92,85 +92,80 @@ public class HangmanCanvas extends GCanvas {
 	        rightFootDrawn = true;
 	    }
 	}
+    private GOval head;
 
-	
-	
-
-	
-	
+    
 	private void drawHead() {
-	    int x = getWidth() / 2 - HEAD_RADIUS;
-	    int y = getHeight() / 2 + ROPE_LENGTH;
+	    x = x + BEAM_LENGTH;
+	    y = y + ROPE_LENGTH;
+
 
 	    // Draw the head as a filled oval
-	    GOval head = new GOval(x, y, 2 * HEAD_RADIUS, 2 * HEAD_RADIUS);
-	    head.setFilled(true);
+	    head = new GOval(x, y, 2 * HEAD_RADIUS, 2 * HEAD_RADIUS);
+
 	    add(head);
 	}
 
 	
 	
 	private void drawBody() {
-	    int x = getWidth() / 2;
-	    int y = getHeight() / 2 + ROPE_LENGTH;
+		
+	    x = x + HEAD_RADIUS;
+	    y = y + 2 * HEAD_RADIUS;
 
 	    GLine bodyLine = new GLine(x, y, x, y + BODY_LENGTH);
 	    add(bodyLine);
 	}
 	
 	private void drawLeftHand() {
-	    int xBody = getWidth() / 2;
-	    int yBody = getHeight() / 2 + ROPE_LENGTH + BODY_LENGTH;
 
-	    // Coordinates for the left hand
-	    int xLeftHand = xBody - ARM_OFFSET_FROM_HEAD;
-	    int yLeftHand = yBody + UPPER_ARM_LENGTH;
-
+		y = y + BODY_LENGTH/2;
+		
 	    // Draw the left hand
-	    GLine leftHandLine = new GLine(xBody, yBody, xLeftHand, yLeftHand);
-	    add(leftHandLine);
+	    GLine leftHandLineStraight = new GLine(x, y, x - UPPER_ARM_LENGTH, y);
+	    GLine leftHandLineDown = new GLine(x - UPPER_ARM_LENGTH, y, x - UPPER_ARM_LENGTH, y + LOWER_ARM_LENGTH);
+	    add(leftHandLineStraight);
+	    add(leftHandLineDown);
 	}
+	
 	
 	
 	private void drawRightHand() {
-	    int xBody = getWidth() / 2;
-	    int yBody = getHeight() / 2 + ROPE_LENGTH + BODY_LENGTH;
 
-	    // Coordinates for the right hand
-	    int xRightHand = xBody + ARM_OFFSET_FROM_HEAD;
-	    int yRightHand = yBody + UPPER_ARM_LENGTH;
-
-	    // Draw the right hand
-	    GLine rightHandLine = new GLine(xBody, yBody, xRightHand, yRightHand);
-	    add(rightHandLine);
+		
+	    // Draw the left hand
+	    GLine leftHandLineStraight = new GLine(x, y, x + UPPER_ARM_LENGTH, y);
+	    GLine leftHandLineDown = new GLine(x + UPPER_ARM_LENGTH, y, x + UPPER_ARM_LENGTH, y + LOWER_ARM_LENGTH);
+	    add(leftHandLineStraight);
+	    add(leftHandLineDown);
 	}
 	
 
 
+	
 	private void drawLeftFoot() {
-	    int xBody = getWidth() / 2;
-	    int yBody = getHeight() / 2 + ROPE_LENGTH + BODY_LENGTH + LEG_LENGTH;
-
-	    // Coordinates for the left foot
-	    int xLeftFoot = xBody - HIP_WIDTH / 2;
-	    int yLeftFoot = yBody + FOOT_LENGTH;
-
-	    // Draw the left foot
-	    GRect leftFootRect = new GRect(xLeftFoot, yLeftFoot, HIP_WIDTH, FOOT_LENGTH);
-	    add(leftFootRect);
+		
+		y = y + BODY_LENGTH/2;
+		
+	    // Draw the left hand
+	    GLine leftFootLineStraight = new GLine(x, y, x - HIP_WIDTH, y);
+	    GLine leftFootLineDown = new GLine(x - HIP_WIDTH, y, x - HIP_WIDTH, y + LEG_LENGTH);
+	    GLine leftFootFinalpart = new GLine(x - HIP_WIDTH, y + LEG_LENGTH, x - HIP_WIDTH - FOOT_LENGTH, y + LEG_LENGTH);
+	    
+	    add(leftFootLineStraight);
+	    add(leftFootLineDown);
+	    add(leftFootFinalpart);
 	}
 
 	private void drawRightFoot() {
-	    int xBody = getWidth() / 2;
-	    int yBody = getHeight() / 2 + ROPE_LENGTH + BODY_LENGTH + LEG_LENGTH;
-
-	    // Coordinates for the right foot
-	    int xRightFoot = xBody + HIP_WIDTH / 2 - FOOT_LENGTH;
-	    int yRightFoot = yBody + FOOT_LENGTH;
-
-	    // Draw the right foot
-	    GRect rightFootRect = new GRect(xRightFoot, yRightFoot, HIP_WIDTH, FOOT_LENGTH);
-	    add(rightFootRect);
+	    // Draw the left hand
+	    GLine rightFootLineStraight = new GLine(x, y, x + HIP_WIDTH, y);
+	    GLine rightFootLineDown = new GLine(x + HIP_WIDTH, y, x + HIP_WIDTH, y + LEG_LENGTH);
+	    GLine rightFootFinalpart = new GLine(x + HIP_WIDTH, y + LEG_LENGTH, x + HIP_WIDTH + FOOT_LENGTH, y + LEG_LENGTH);
+	    
+	    add(rightFootLineStraight);
+	    add(rightFootLineDown);
+	    add(rightFootFinalpart);
 	}
 
 	
