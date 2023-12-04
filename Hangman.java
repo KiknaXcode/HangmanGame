@@ -15,6 +15,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private RandomGenerator randNum = RandomGenerator.getInstance();
 	private HangmanLexicon word = new HangmanLexicon();
+	private static final int LEXICON_MAX_WORD_NUMBER = 120000;
 	
 	boolean gameOn = true;
 	
@@ -59,7 +60,7 @@ public class Hangman extends ConsoleProgram {
     // returns random string from list of Lexicon
     private String takeWordFromList(){
     	
-    	int randNumber = randNum.nextInt(0, 1);
+    	int randNumber = randNum.nextInt(1, LEXICON_MAX_WORD_NUMBER);
     	
     	listWord = word.getWord(randNumber); // getting random word according to randNumber value;
     	
