@@ -26,6 +26,13 @@ public class Hangman extends ConsoleProgram {
 	
 	private HangmanCanvas canvas;
 	
+	
+    public void init() { 
+    	canvas = new HangmanCanvas(); 
+    	add(canvas); 
+    	
+    } 
+	
     public void run() {
     	
     	// println("Welcome to Hangman");
@@ -36,18 +43,13 @@ public class Hangman extends ConsoleProgram {
     	
     	println(dashWord);
     	
+    	canvas.addThreeMainLine();
+    	
     	playWhileLivesExists(listWord, dashWord); // give user right to guess numbers while lives exists
 
     	
 
 	}
-    
-    
-    public void init() { 
-    	canvas = new HangmanCanvas(); 
-    	add(canvas); 
-    	
-    } 
 
     	// println("You have " + livesPerTry + " guessess left.");
     
