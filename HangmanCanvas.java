@@ -52,7 +52,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void displayFinalWord(String word){
 	    int x = getWidth() / 2 - BEAM_LENGTH;
-	    letterLabel = new GLabel(word, x + 50, getHeight() - 75);
+	    letterLabel = new GLabel(word, x + 50, getHeight() - 25);
 	    letterLabel.setFont("Arial-15"); 
 	    add(letterLabel);
 	}
