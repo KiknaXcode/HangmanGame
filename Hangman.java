@@ -46,7 +46,7 @@ public class Hangman extends ConsoleProgram {
     public void init() { 
     	canvas = new HangmanCanvas(); 
     	add(canvas); 
-    	canvas.reset();
+    	canvas.addThreeMainLine();
     } 
 
     	// println("You have " + livesPerTry + " guessess left.");

@@ -28,7 +28,7 @@ public class HangmanCanvas extends GCanvas {
     int x = getWidth() / 2 - BEAM_LENGTH;
     int y = getHeight() / 2 - SCAFFOLD_HEIGHT / 2;
 	// adds three main lines
-	private void addThreeMainLine() {
+	public void addThreeMainLine() {
 		
 
 	    // Draw scaffold
@@ -92,6 +92,8 @@ public class HangmanCanvas extends GCanvas {
 	        rightFootDrawn = true;
 	    }
 	}
+	
+	
     private GOval head;
 
     
