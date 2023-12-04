@@ -1,21 +1,12 @@
-/*
- * File: HangmanLexicon.java
- * -------------------------
- * This file contains a stub implementation of the HangmanLexicon
- * class that you will reimplement for Part III of the assignment.
- */
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import acm.program.ConsoleProgram;
-import acm.util.*;
 
-public class HangmanLexicon extends ConsoleProgram{
-	
-	
+public class HangmanLexicon extends ConsoleProgram {
+
     private ArrayList<String> wordsList;
 
     // This is the HangmanLexicon constructor
@@ -23,8 +14,7 @@ public class HangmanLexicon extends ConsoleProgram{
         wordsList = new ArrayList<>();
         initializeWordList();
     }
-    
-    
+
     // Reads lines from the file and stores them in the ArrayList
     private void initializeWordList() {
         try {
@@ -32,6 +22,7 @@ public class HangmanLexicon extends ConsoleProgram{
             String line = reader.readLine();
             while (line != null) {
                 wordsList.add(line);
+                line = reader.readLine(); 
             }
             println(wordsList);
             reader.close();
@@ -45,8 +36,9 @@ public class HangmanLexicon extends ConsoleProgram{
         return wordsList.size();
     }
 
-/** Returns the word at the specified index. */
-	public String getWord(int index) {
-		return wordsList.get(index);
-	}
+    /** Returns the word at the specified index. */
+    public String getWord(int index) {
+        return wordsList.get(index);
+    }
 }
+
