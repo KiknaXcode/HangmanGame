@@ -22,7 +22,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private String dashWord;
 	
-	int livesPerTry = 8;
+	int livesPerTry = 6;
 	
 	private HangmanCanvas canvas;
 	
